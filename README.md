@@ -8,3 +8,4 @@ i use this code to separate futures data from options data because i only wanted
 
 this code will save filtered data into new excel file with proper date and time arrangement.
 
+just paste your mix data file path in,  CSV_ROOT_DIRECTORY = r 
