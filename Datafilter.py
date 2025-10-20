@@ -3,12 +3,10 @@ import os
 
 # --- USER CONFIGURATION START ---
 
-# 1. Set the path to the root folder containing your CSV files.
+
 CSV_ROOT_DIRECTORY = r'D:\NSE DATA'
 
-# 2. Define the prefix for the Futures Tickers you want to extract.
-#    This will find all tickers that START WITH this string.
-#    e.g., 'RELIANCE-I' will find 'RELIANCE-I', 'RELIANCE-II', 'RELIANCE-III', etc.
+
 FUTURES_PREFIX = 'RELIANCE-I'
 
 # 3. Define the final output CSV file name.
@@ -42,8 +40,8 @@ else:
                         print(f"  - SKIPPED: File is missing required columns (Date, Time, Ticker).")
                         continue
 
-                    # CORE FILTERING LOGIC: Find tickers that start with the specified prefix.
-                    # This handles cases like RELIANCE-I, RELIANCE-II, etc.
+                 
+            
                     # We also ensure the Ticker is a string to avoid errors.
                     mask = df['Ticker'].astype(str).str.startswith(FUTURES_PREFIX, na=False)
                     filtered_df = df[mask].copy()
